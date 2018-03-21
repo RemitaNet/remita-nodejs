@@ -1,0 +1,16 @@
+{
+  "name": "remita-hapi",
+  "version": "1.0.0",
+  "description": "",
+  "main": "remita.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "js-sha512": "^0.7.1",
+    "moment": "^2.21.0",
+    "request": "^2.81.0"
+  }
+}
