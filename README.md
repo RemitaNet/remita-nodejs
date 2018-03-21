@@ -10,7 +10,7 @@ Using npm:
 
 In Node.js:
 	
-		const { RemitaService } =  require('./init');
+		const { RemitaService } =  require('remita');
 		const  sha512  =  require('js-sha512').sha512;
 		const  service  =  new  RemitaService.Service();
 		
