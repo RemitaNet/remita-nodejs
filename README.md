@@ -1,20 +1,37 @@
+# Remita NodeJS
 
-*Remita api for Split Payment, Mandate Setup, Mandate Request OTP, Activate Mandate, and Stop Mandate. All these made payment easy and fast.*
+---
+- [Overview](#Overview)
+- [Installation](#Installation)
+- [Usage](#Usage)
+- [Contributing](#Contributing)
+- [License](License)
+
+---
+## Overview
+Remita api for Split Payment, Mandate Setup, Mandate Request OTP, Activate Mandate, and Stop Mandate. All these made payment easy and fast.
 
 ## Installation
 
 Using npm:
 
+```
 	   $ npm i -g remita
 	   $ npm i --save remita
+```
 
 In Node.js:
-	
+
+```	
 		const { RemitaService } =  require('remita');
 		const  sha512  =  require('js-sha512').sha512;
 		const  service  =  new  RemitaService.Service();
-		
-**SPLIT PAYMENT**
+```
+
+---
+
+## Usage
+#### Split Payment
 		
 		const  lineItem1  =  new RemitaService.LineItem.Builder()
 		.withLineItemsId('itemid1')
@@ -56,7 +73,7 @@ In Node.js:
 		.catch((err)=>console.log(err));
 
 
-**MANDATE SETUP**
+#### Mandate Setup
 
 		const  mandateSetupJSON  =  new  RemitaService.MandateSetup.Builder()
 		.withMerchantId('1509371036019')
@@ -91,7 +108,7 @@ In Node.js:
 		API\_DETAILS\_HASH:  sha512(`${
 		"QUxMVEVDSDEyMzR8QUxMVEVDSA==" \+ "35457353821" \+ "d0F5MVg5SmtCV0xsWERjdHEycEVMc0x2R0NqZ0hFQmx6YlZXbEtmdWVBVjkrZGhlMjU2MzVBPT0="}`) ,}
 
-**MANDATE REQUEST OTP**
+#### Mandate Request OTP
 
 		const  mandateActivateOTPRequest  =  new  RemitaService.MandateRequestOtp('290014520466','35457353821').toJSON()
 		service.mandateActivateRequestOTPService(mandateActivateOTPRequest)
@@ -101,7 +118,7 @@ In Node.js:
 		  
 		  
 
-**ACTIVATE MANDATE**
+#### Activate Mandate
 
 		const  param1  =  new  RemitaService.Parameter().add('param1', 'OTP').add('value', '0000').object
 		const  param2  =  new  RemitaService.Parameter().add('param', 'CARD').add('value', '1234').object
@@ -115,7 +132,7 @@ In Node.js:
 
 		  
 
-**STOP MANDATE**
+#### Stop Mandate
 
 		const  stopMandate  =  new  RemitaService.StopMandate.Builder()
 		.withApiKey('498716')
@@ -129,10 +146,27 @@ In Node.js:
 		.then((body)=>console.log(body))
 		.catch((err)=>console.log(err));
 
-
-## Useful links
-* Join our Slack Developer/Support channel at http://bit.ly/RemitaDevSlack
+### Useful links
+Join our Slack Developer/Support channel on [Slack.](http://bit.ly/RemitaDevSlack)
     
-## Support
-- For all other support needs, support@remita.net
-- To contribute to this repo, create an issue on what you intend to fix or update, make a PR and team will look into it and merge.
+### Support
+For all other support needs, support@remita.net
+
+---
+
+## Contributing
+To contribute to this repo, follow these guidelines for creating issues, proposing new features, and submitting pull requests:
+
+1. Fork the repository.
+2. Create a new branch: `git checkout -b "feature-name"`
+3. Make your changes and commit: `git commit -m "added some new features"`
+4. Push your changes: `git push origin feature-name`
+5. Submit a Pull Request (PR).
+
+Thank you!
+
+---
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
